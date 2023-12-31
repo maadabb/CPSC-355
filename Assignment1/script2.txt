@@ -1,0 +1,133 @@
+Script started on 2022-09-27 17:40:55-06:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="237" LINES="63"]
+]0;maad.abbasi@csa3:~[?2004hmaad.abbasi@csa3:~$ gdb assign1b.o
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign1b.o[m...
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) n
+[?2004lDebuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+(No debugging symbols found in [32massign1b.o[m)
+[?2004h(gdb) d/i[C[C[C $pc[C[1@i[1@s[1@p[1@l[1P[1P[1P[1P
+[?2004l[?2004h(gdb) d/i $pc[C[1@i[1@s[1@p[1@l[1@a[1@t[1P[1@y
+[?2004l1: x/i $pc
+[2m<error: [m[2mNo registers.[m[2m>[m
+[?2004h(gdb) ni[K[Kb *exit
+[?2004lBreakpoint 1 at [34m0x40074c[m
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/ugd/maad.abbasi/assign1b.o[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+x = -10
+y = -10563
+max = -10563
+
+x = -9
+y = -2470
+max = -2470
+
+x = -8
+y = 2329
+max = 2329
+
+x = -7
+y = 4650
+max = 4650
+
+x = -6
+y = 5213
+max = 5213
+
+x = -5
+y = 4642
+max = 5213
+
+x = -4
+y = 3465
+max = 5213
+
+x = -3
+y = 2114
+max = 5213
+
+x = -2
+y = 925
+max = 5213
+
+x = -1
+y = 138
+max = 5213
+
+x = 0
+y = -103
+max = 5213
+
+x = 1
+y = 250
+max = 5213
+
+x = 2
+y = 1149
+max = 5213
+
+x = 3
+y = 2450
+max = 5213
+
+x = 4
+y = 3913
+max = 5213
+
+x = 5
+y = 5202
+max = 5213
+
+x = 6
+y = 5885
+max = 5885
+
+x = 7
+y = 5434
+max = 5885
+
+x = 8
+y = 3225
+max = 5885
+
+x = 9
+y = -1462
+max = 5885
+
+x = 10
+y = -9443
+max = 5885
+
+
+Breakpoint 1, [34m0x0000fffff7e4d480[m in [33mexit[m () from [32m/lib64/libc.so.6[m
+1: x/i $pc
+=> [34m0xfffff7e4d480[m <[33mexit[m>:	paciasp
+[?2004h[?2004l[?2004h(gdb) p $x20
+[?2004l$1 = 5885
+[?2004h(gdb) c
+[?2004lContinuing.
+[Inferior 1 (process 2306802) exited normally]
+[?2004h[?2004l[?2004h(gdb) exit
+[?2004l]0;maad.abbasi@csa3:~[?2004hmaad.abbasi@csa3:~$ exit
+[?2004lexit
+
+Script done on 2022-09-27 17:43:19-06:00 [COMMAND_EXIT_CODE="0"]

@@ -1,0 +1,358 @@
+Script started on 2022-09-26 16:47:46-06:00 [TERM="xterm-256color" TTY="/dev/pts/17" COLUMNS="204" LINES="63"]
+]0;maad.abbasi@csa1:~[?2004hmaad.abbasi@csa1:~$ gdb assign1a.o
+[?2004l[35;1mGNU gdb (GDB) Fedora 12.1-1.fc36[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32massign1a.o[m...
+[?2004h
+This GDB supports auto-downloading debuginfo from the following URLs:
+https://debuginfod.fedoraproject.org/ 
+Enable debuginfod for this session? (y or [n]) n
+[?2004lDebuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
+(No debugging symbols found in [32massign1a.o[m)
+[?2004h(gdb) display/i $pc
+[?2004l1: x/i $pc
+[2m<error: [m[2mNo registers.[m[2m>[m
+[?2004h(gdb) b *main
+[?2004lBreakpoint 1 at [34m0x4006b8[m
+[?2004h(gdb) r
+[?2004lStarting program: [32m/home/ugd/maad.abbasi/assign1a.o[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib64/libthread_db.so.1[m".
+
+Breakpoint 1, [34m0x00000000004006b8[m in [33mmain[m ()
+1: x/i $pc
+=> [34m0x4006b8[m <[33mmain[m>:	stp	x29, x30, [sp, #-16]!
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006bc[m in [33mmain[m ()
+1: x/i $pc
+=> [34m0x4006bc[m <[33mmain[m+4>:	mov	x29, sp
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x00000000004006c0[m in [33mmain[m ()
+1: x/i $pc
+=> [34m0x4006c0[m <[33mmain[m+8>:	mov	x19, #0xfffffffffffffff6    	// #-10
+[?2004h[?2004l[?2004h(gdb) p/d[K[K[Kni
+[?2004l[34m0x00000000004006c4[m in [33mmain[m ()
+1: x/i $pc
+=> [34m0x4006c4[m <[33mmain[m+12>:	mov	x20, #0xffffffffffff63c0    	// #-40000
+[?2004h[?2004l[?2004h(gdb) p/d $x19
+[?2004l$1 = -10
+[?2004h(gdb) p/d $x20
+[?2004l$2 = 1
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006c8[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006c8[m <[33mtop[m>:	cmp	x19, #0xa
+[?2004h[?2004l[?2004h(gdb) nip/d $x20
+[?2004l$3 = -40000
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006cc[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006cc[m <[33mtop[m+4>:	b.gt	[34m0x400754[m <[33mexit[m>
+[?2004h[?2004l[?2004h(gdb) p/d $x19
+[?2004l$4 = -10
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006d0[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006d0[m <[33mtop[m+8>:	mul	x21, x19, x19
+[?2004h[?2004l[?2004h(gdb) nip/d $x19[K[K\[K20[K1[K[K[K[K[K[K[K[Kni
+[?2004l[34m0x00000000004006d4[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006d4[m <[33mtop[m+12>:	mul	x21, x21, x19
+[?2004h[?2004l[?2004h(gdb) nip/d $x19[K[K21
+[?2004l$5 = 100
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006d8[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006d8[m <[33mtop[m+16>:	mul	x21, x21, x19
+[?2004h[?2004l[?2004h(gdb) nip/d $x21
+[?2004l$6 = -1000
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006dc[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006dc[m <[33mtop[m+20>:	mov	x22, #0xfffffffffffffffc    	// #-4
+[?2004h[?2004l[?2004h(gdb) nip/d $x21
+[?2004l$7 = 10000
+[?2004h(gdb) p/d $x21[C[C[C[C[C[C[Kp/d $x21[C[C[C[C[C[Cni[K
+[?2004l[34m0x00000000004006e0[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006e0[m <[33mtop[m+24>:	mul	x22, x22, x21
+[?2004h[?2004l[?2004h(gdb) nip/d $x21[K2
+[?2004l$8 = -4
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006e4[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006e4[m <[33mtop[m+28>:	mul	x23, x19, x19
+[?2004h[?2004l[?2004h(gdb) nip/d $x22
+[?2004l$9 = -40000
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006e8[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006e8[m <[33mtop[m+32>:	mov	x24, #0x12d                 	// #301
+[?2004h[?2004l[?2004h(gdb) nip/d $x22[K3
+[?2004l$10 = 100
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006ec[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006ec[m <[33mtop[m+36>:	mul	x24, x24, x23
+[?2004h[?2004l[?2004h(gdb) nip/d $x23[K4
+[?2004l$11 = 301
+[?2004h(gdb) p/d $x24[C[C[C[C[C[Cni[Kp/d $x24[C[C[C[C[C[Cni[K
+[?2004l[34m0x00000000004006f0[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006f0[m <[33mtop[m+40>:	add	x22, x22, x24
+[?2004h[?2004l[?2004h(gdb) p/d x244[K
+[?2004lNo symbol "x24" in current context.
+[?2004h(gdb) p/d x24ni[Kp/d $x24
+[?2004l$12 = 30100
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006f4[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006f4[m <[33mtop[m+44>:	mov	x25, #0x38                  	// #56
+[?2004h[?2004l[?2004h(gdb) pnip/d $x24[K2
+[?2004l$13 = -9900
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006f8[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006f8[m <[33mtop[m+48>:	mul	x25, x25, x19
+[?2004h[?2004l[?2004h(gdb) nip/d $x22[C[C[C[C[C[Cni[Kp/d $x24[K5
+[?2004l$14 = 56
+[?2004h(gdb) ni
+[?2004l[34m0x00000000004006fc[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x4006fc[m <[33mtop[m+52>:	mov	x26, #0xffffffffffffff99    	// #-103
+[?2004h[?2004l[?2004h(gdb) nip/d $x25
+[?2004l$15 = -560
+[?2004h(gdb) ni
+[?2004l[34m0x0000000000400700[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400700[m <[33mtop[m+56>:	add	x25, x25, x26
+[?2004h[?2004l[?2004h(gdb) p/[K[Knip/d $x25[K6
+[?2004l$16 = -103
+[?2004h(gdb) ni
+[?2004l[34m0x0000000000400704[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400704[m <[33mtop[m+60>:	add	x22, x22, x25
+[?2004h[?2004l[?2004h(gdb) nip/d $x26[K5
+[?2004l$17 = -663
+[?2004h(gdb) p/d $x25[C[C[C[C[C[C[Kni
+[?2004l[34m0x0000000000400708[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400708[m <[33mtop[m+64>:	ldr	x0, [34m0x400760[m <[33mexit[m+12>
+[?2004h[?2004l[?2004h(gdb) p/d %[K$#[Kc[Kx22
+[?2004l$18 = -10563
+[?2004h(gdb)                                                                                                                     [C[C[C[C[C[Cp/d $x22[K[C[C[C[C[C[C                                                                                                                    nni[C[C[C[C[C[Cp/d $x22[K[K[K[K[K[K[K[K[Kni
+[?2004l[34m0x000000000040070c[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x40070c[m <[33mtop[m+68>:	mov	x1, x19
+[?2004h[?2004l[?2004h(gdb) nip/d $x22[K[K0
+[?2004l$19 = 4195992
+[?2004h(gdb) ni
+[?2004l[34m0x0000000000400710[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400710[m <[33mtop[m+72>:	bl	[34m0x400540[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) nip/d $x0[K1
+[?2004l$20 = -10
+[?2004h(gdb) ni
+[?2004lx = -10
+
+[34m0x0000000000400714[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400714[m <[33mtop[m+76>:	ldr	x0, [34m0x400768[m <[33mexit[m+20>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x0000000000400718[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400718[m <[33mtop[m+80>:	mov	x1, x22
+[?2004h[?2004l[?2004h(gdb) nip/d $x1ni[Kp/d $x0ni[Kp/d $x22[C[C[C[C[C[Cni[Kp/d $x25[C[C[C[C[C[Cni[Kp/d $x26[C[C[C[C[C[Cni[Kp/d $x26[K[K0
+[?2004l$21 = 4196001
+[?2004h(gdb) p/d $x0[K[K[K[K[K[K[Kni
+[?2004l[34m0x000000000040071c[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x40071c[m <[33mtop[m+84>:	bl	[34m0x400540[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) nip/d $x0[K1
+[?2004l$22 = -10563
+[?2004h(gdb) ni
+[?2004ly = -10563
+
+[34m0x0000000000400720[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400720[m <[33mtop[m+88>:	cmp	x22, x20
+[?2004h[?2004l[?2004h(gdb) nip/d $x1ni[Kp/d $x1[K22[K[K[K[K[K[K[K[Kni
+[?2004l[34m0x0000000000400724[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400724[m <[33mtop[m+92>:	b.lt	[34m0x40073c[m <[33mnochange[m>  // b.tstop
+[?2004h[?2004l[?2004h(gdb) nip/d $x1[K22
+[?2004l$23 = -10563
+[?2004h(gdb) ni
+[?2004l[34m0x0000000000400728[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400728[m <[33mtop[m+96>:	mov	x20, x22
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004l[34m0x000000000040072c[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x40072c[m <[33mtop[m+100>:	ldr	x0, [34m0x400770[m <[33mexit[m+28>
+[?2004h[?2004l[?2004h(gdb) nip/d $x22[K0
+[?2004l$24 = -10563
+[?2004h(gdb) p/d $x20[C[C[C[C[C[Cni[Kp/d $x20[C[C[C[C[C[C[Kp/d $x20[C[C[C[C[C[Cni[Kp/d $x20[C[C[C[C[C[Cni[K
+[?2004l[34m0x0000000000400730[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400730[m <[33mtop[m+104>:	mov	x1, x20
+[?2004h[?2004l[?2004h(gdb) nip/d $x20[C[C[C[C[C[Cni[Kp/d $x20[K[K0
+[?2004l$25 = 4196010
+[?2004h(gdb) ni
+[?2004l[34m0x0000000000400734[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400734[m <[33mtop[m+108>:	bl	[34m0x400540[m <[33mprintf@plt[m>
+[?2004h[?2004l[?2004h(gdb) od[K[Kpd([K=[K[K[Knip/d $x0[K1
+[?2004l$26 = -10563
+[?2004h(gdb) ni
+[?2004lmax = -10563
+
+[34m0x0000000000400738[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400738[m <[33mtop[m+112>:	b	[34m0x40074c[m <[33mincrement[m>
+[?2004h[?2004l[?2004h(gdb) ni
+[?2004lx = -9
+
+y = -2470
+
+max = -2470
+
+[34m0x0000000000400738[m in [33mtop[m ()
+1: x/i $pc
+=> [34m0x400738[m <[33mtop[m+112>:	b	[34m0x40074c[m <[33mincrement[m>
+[?2004h[?2004l[?2004h(gdb) c
+[?2004lContinuing.
+x = -8
+
+y = 2329
+
+max = 2329
+
+x = -7
+
+y = 4650
+
+max = 4650
+
+x = -6
+
+y = 5213
+
+max = 5213
+
+x = -5
+
+y = 4642
+
+max = 5213
+
+x = -4
+
+y = 3465
+
+max = 5213
+
+x = -3
+
+y = 2114
+
+max = 5213
+
+x = -2
+
+y = 925
+
+max = 5213
+
+x = -1
+
+y = 138
+
+max = 5213
+
+x = 0
+
+y = -103
+
+max = 5213
+
+x = 1
+
+y = 250
+
+max = 5213
+
+x = 2
+
+y = 1149
+
+max = 5213
+
+x = 3
+
+y = 2450
+
+max = 5213
+
+x = 4
+
+y = 3913
+
+max = 5213
+
+x = 5
+
+y = 5202
+
+max = 5213
+
+x = 6
+
+y = 5885
+
+max = 5885
+
+x = 7
+
+y = 5434
+
+max = 5885
+
+x = 8
+
+y = 3225
+
+max = 5885
+
+x = 9
+
+y = -1462
+
+max = 5885
+
+x = 10
+
+y = -9443
+
+max = 5885
+
+[Inferior 1 (process 1938064) exited normally]
+[?2004h[?2004l[?2004h(gdb) quit
+[?2004l]0;maad.abbasi@csa1:~[?2004hmaad.abbasi@csa1:~$ exit
+[?2004lexit
+
+Script done on 2022-09-26 17:56:58-06:00 [COMMAND_EXIT_CODE="0"]
